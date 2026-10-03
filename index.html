@@ -1,1 +1,1250 @@
 
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OgaBek Computer Service</title>
+
+    <style>
+
+        /* =========================
+           ASOSIY SOZLAMALAR
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f7fc;
+            color: #172033;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(8, 25, 55, 0.90);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00bfff;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00c8ff;
+        }
+
+        .menu-btn {
+            display: none;
+
+            border: none;
+            background: transparent;
+            color: white;
+
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 130px 7% 70px;
+
+            position: relative;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(3, 15, 35, 0.82),
+                    rgba(3, 28, 65, 0.90)
+                ),
+                url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 750px;
+            animation: heroIn 1.2s ease;
+        }
+
+        .hero-small {
+            color: #00c8ff;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.12;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #00c8ff;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #d9e6f5;
+            max-width: 650px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #00aeea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #008ac0;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid #00c8ff;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: #00c8ff;
+            transform: translateY(-3px);
+        }
+
+        @keyframes heroIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================
+           UMUMIY SECTION
+        ========================= */
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: #009fe3;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .section-title h2 {
+            margin-top: 10px;
+            font-size: 38px;
+            color: #10284d;
+        }
+
+        .section-title p {
+            margin: 15px auto;
+            max-width: 650px;
+            color: #667085;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           XIZMATLAR
+        ========================= */
+
+        .services {
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(240px, 1fr));
+
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 30px 25px;
+
+            box-shadow:
+                0 10px 35px rgba(20,50,90,0.08);
+
+            border: 1px solid #e7edf5;
+
+            transition: 0.4s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background: linear-gradient(
+                90deg,
+                #008cff,
+                #00d4ff
+            );
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 20px 45px rgba(20,50,90,0.15);
+        }
+
+        .icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e8f7ff;
+
+            border-radius: 15px;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #143967;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #68758a;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .price {
+            margin-top: 20px;
+
+            color: #008bd0;
+
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           INFO BO'LIM
+        ========================= */
+
+        .info-section {
+            background: #eef6ff;
+        }
+
+        .info-box {
+            max-width: 950px;
+            margin: auto;
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 40px;
+
+            box-shadow:
+                0 15px 40px rgba(30,70,110,0.08);
+        }
+
+        .info-box h3 {
+            color: #143967;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            color: #667085;
+            line-height: 1.8;
+        }
+
+        .info-list {
+            margin-top: 25px;
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(220px,1fr));
+
+            gap: 15px;
+        }
+
+        .info-list div {
+            padding: 15px;
+
+            background: #f3f8fd;
+
+            border-radius: 10px;
+
+            color: #23476e;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           ALOQA
+        ========================= */
+
+        .contact {
+            background:
+                linear-gradient(
+                    135deg,
+                    #061a36,
+                    #0b3d70
+                );
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact .section-title p {
+            color: #c7d8ea;
+        }
+
+        .contact-box {
+            max-width: 850px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(220px,1fr));
+
+            gap: 20px;
+        }
+
+        .contact-card {
+            padding: 25px;
+
+            background: rgba(255,255,255,0.08);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-7px);
+
+            background: rgba(255,255,255,0.13);
+        }
+
+        .contact-card .contact-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .contact-card a {
+            color: #7bdcff;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #031326;
+
+            color: #9db0c5;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer strong {
+            color: #00bfff;
+        }
+
+
+        /* =========================
+           SCROLL ANIMATION
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(40px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           MOBIL
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+
+                top: 100%;
+                left: 0;
+
+                width: 100%;
+
+                background: #061a36;
+
+                display: none;
+
+                flex-direction: column;
+
+                gap: 0;
+
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+
+                padding: 17px 25px;
+
+                border-bottom:
+                1px solid rgba(255,255,255,0.08);
+            }
+
+            nav a:hover {
+                background: #0b3d70;
+            }
+
+            .hero {
+                min-height: 100vh;
+
+                padding:
+                120px 20px 60px;
+
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 37px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .info-box {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        💻 OgaBek <span>Computer Service</span>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <nav id="menu">
+
+        <a href="#bosh" onclick="closeMenu()">
+            Bosh sahifa
+        </a>
+
+        <a href="#xizmatlar" onclick="closeMenu()">
+            Xizmatlar
+        </a>
+
+        <a href="#windows" onclick="closeMenu()">
+            Windows
+        </a>
+
+        <a href="#office" onclick="closeMenu()">
+            Office
+        </a>
+
+        <a href="#driver" onclick="closeMenu()">
+            Driverlar
+        </a>
+
+        <a href="#aloqa" onclick="closeMenu()">
+            Aloqa
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="bosh">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            ⚡ PROFESSIONAL KOMPYUTER XIZMATI
+        </div>
+
+        <h1>
+            Kompyuteringiz uchun
+            <span>barcha kerakli xizmatlar</span>
+        </h1>
+
+        <p>
+            Windows, Office, driverlar, antivirus va boshqa
+            kerakli dasturlarni tez va sifatli o‘rnatish.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#xizmatlar"
+                class="btn btn-primary"
+            >
+                🛠 Xizmatlarni ko‘rish
+            </a>
+
+            <a
+                href="https://t.me/ogabekk02"
+                target="_blank"
+                class="btn btn-outline"
+            >
+                ✈️ Telegram
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     XIZMATLAR
+========================= -->
+
+<section id="xizmatlar">
+
+    <div class="section-title reveal">
+
+        <small>🛠 XIZMATLARIMIZ</small>
+
+        <h2>
+            Sizga kerak bo‘lgan xizmatlar
+        </h2>
+
+        <p>
+            Kompyuteringizni ishlashga tayyor holatga
+            keltirish uchun kerakli dasturiy xizmatlar.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                🪟
+            </div>
+
+            <h3>
+                Windows o‘rnatish
+            </h3>
+
+            <p>
+                Windows operatsion tizimini o‘rnatish
+                va dastlabki sozlash.
+            </p>
+
+            <div class="price">
+                50 000 so‘m
+            </div>
+
+        </div>
+
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Windows sozlash
+            </h3>
+
+            <p>
+                Windows tizimini tez va qulay ishlashi
+                uchun kerakli sozlamalarni bajarish.
+            </p>
+
+            <div class="price">
+                30 000 so‘m
+            </div>
+
+        </div>
+
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                📄
+            </div>
+
+            <h3>
+                Microsoft Office
+            </h3>
+
+            <p>
+                Word, Excel, PowerPoint va boshqa
+                Office dasturlarini o‘rnatish.
+            </p>
+
+            <div class="price">
+                30 000 so‘m
+            </div>
+
+        </div>
+
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                🔧
+            </div>
+
+            <h3>
+                Driverlar
+            </h3>
+
+            <p>
+                Wi-Fi, Bluetooth, Audio, Video va
+                boshqa driverlarni o‘rnatish.
+            </p>
+
+            <div class="price">
+                30 000 so‘m
+            </div>
+
+        </div>
+
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                🛡️
+            </div>
+
+            <h3>
+                Antivirus
+            </h3>
+
+            <p>
+                Kompyuter uchun antivirus dasturini
+                o‘rnatish va sozlash.
+            </p>
+
+            <div class="price">
+                25 000 so‘m
+            </div>
+
+        </div>
+
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                📦
+            </div>
+
+            <h3>
+                Dasturlar paketi
+            </h3>
+
+            <p>
+                Kompyuter uchun kerakli dasturlarni
+                birgalikda o‘rnatish.
+            </p>
+
+            <div class="price">
+                50 000 so‘m
+            </div>
+
+        </div>
+
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h3>
+                Brauzerlar
+            </h3>
+
+            <p>
+                Chrome, Firefox va boshqa brauzerlarni
+                o‘rnatish.
+            </p>
+
+            <div class="price">
+                20 000 so‘m
+            </div>
+
+        </div>
+
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                💻
+            </div>
+
+            <h3>
+                Umumiy sozlash
+            </h3>
+
+            <p>
+                Kompyuterni dasturiy jihatdan
+                umumiy sozlash.
+            </p>
+
+            <div class="price">
+                70 000 so‘m
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     WINDOWS
+========================= -->
+
+<section
+    id="windows"
+    class="info-section"
+>
+
+    <div class="section-title reveal">
+
+        <small>🪟 WINDOWS</small>
+
+        <h2>
+            Windows o‘rnatish
+        </h2>
+
+    </div>
+
+
+    <div class="info-box reveal">
+
+        <h3>
+            Windows tizimini tayyor holatda o‘rnatamiz
+        </h3>
+
+        <p>
+            Windows operatsion tizimini o‘rnatish,
+            qayta o‘rnatish va dastlabki sozlash
+            xizmatlari mavjud.
+        </p>
+
+
+        <div class="info-list">
+
+            <div>✓ Windows o‘rnatish</div>
+
+            <div>✓ Driverlarni o‘rnatish</div>
+
+            <div>✓ Windows sozlash</div>
+
+            <div>✓ Kerakli dasturlar</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     OFFICE
+========================= -->
+
+<section id="office">
+
+    <div class="section-title reveal">
+
+        <small>📄 MICROSOFT OFFICE</small>
+
+        <h2>
+            Office dasturlari
+        </h2>
+
+    </div>
+
+
+    <div class="info-box reveal">
+
+        <h3>
+            Ish va o‘qish uchun kerakli dasturlar
+        </h3>
+
+        <p>
+            Microsoft Word, Excel, PowerPoint va
+            boshqa ofis dasturlarini o‘rnatish va
+            sozlash xizmati.
+        </p>
+
+
+        <div class="info-list">
+
+            <div>✓ Word</div>
+
+            <div>✓ Excel</div>
+
+            <div>✓ PowerPoint</div>
+
+            <div>✓ PDF dasturlari</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     DRIVERLAR
+========================= -->
+
+<section
+    id="driver"
+    class="info-section"
+>
+
+    <div class="section-title reveal">
+
+        <small>🔧 DRIVERLAR</small>
+
+        <h2>
+            Qurilma driverlari
+        </h2>
+
+    </div>
+
+
+    <div class="info-box reveal">
+
+        <h3>
+            Qurilmalarni to‘g‘ri ishlashini ta’minlash
+        </h3>
+
+        <p>
+            Kompyuterning audio, video, Wi-Fi,
+            Bluetooth, chipset va boshqa qurilmalari
+            uchun kerakli driverlarni o‘rnatamiz.
+        </p>
+
+
+        <div class="info-list">
+
+            <div>✓ Wi-Fi</div>
+
+            <div>✓ Bluetooth</div>
+
+            <div>✓ Audio</div>
+
+            <div>✓ Video</div>
+
+            <div>✓ Chipset</div>
+
+            <div>✓ USB qurilmalar</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ALOQA
+========================= -->
+
+<section
+    id="aloqa"
+    class="contact"
+>
+
+    <div class="section-title reveal">
+
+        <small>📞 ALOQA</small>
+
+        <h2>
+            Biz bilan bog‘laning
+        </h2>
+
+        <p>
+            Xizmatlar bo‘yicha ma’lumot olish uchun
+            quyidagi kontaktlardan foydalaning.
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+
+        <div class="contact-card reveal">
+
+            <div class="contact-icon">
+                📱
+            </div>
+
+            <h3>
+                Telefon
+            </h3>
+
+            <a href="tel:+998776232228">
+                +998 77 623 22 28
+            </a>
+
+        </div>
+
+
+
+        <div class="contact-card reveal">
+
+            <div class="contact-icon">
+                ✈️
+            </div>
+
+            <h3>
+                Telegram
+            </h3>
+
+            <a
+                href="https://t.me/ogabekk02"
+                target="_blank"
+            >
+                @ogabekk02
+            </a>
+
+        </div>
+
+
+
+        <div class="contact-card reveal">
+
+            <div class="contact-icon">
+                📧
+            </div>
+
+            <h3>
+                Gmail
+            </h3>
+
+            <a
+                href="mailto:ogabekk08211@gmail.com"
+            >
+                ogabekk08211@gmail.com
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026
+        <strong>OgaBek Computer Service</strong>
+    </p>
+
+    <p style="margin-top:8px;">
+        Kompyuter xizmatlari • Windows • Office • Driverlar
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* MOBIL MENYU */
+
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("menu");
+
+        menu.classList.toggle("active");
+
+    }
+
+
+    function closeMenu() {
+
+        document
+            .getElementById("menu")
+            .classList.remove("active");
+
+    }
+
+
+
+    /* SCROLL ANIMATION */
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(
+                    (entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target
+                                .classList
+                                .add("show");
+
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    document
+        .querySelectorAll(".reveal")
+        .forEach(
+            (element) => {
+
+                observer.observe(element);
+
+            }
+        );
+
+
+</script>
+
+</body>
+</html>
